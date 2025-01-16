@@ -1,8 +1,8 @@
-### Metric Convertor ###
+# Metric Convertor #
 
 Simple command-line convertor that transform metric units into imperial. 
 
- # Supports #
+ ### Supports ###
 - kg to lb (kg/lb)
 - gram to ounces(g/oz)
 - km to mile(km/mi)
@@ -10,6 +10,6 @@ Simple command-line convertor that transform metric units into imperial.
 
 at any time, type 'exit' to quit"
 
-# SETUP # 
+### SETUP ### 
 
 Run ```java -jar yourfile.jar``` in the terminal to execute file. 
