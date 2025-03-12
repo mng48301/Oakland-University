@@ -56,3 +56,10 @@ public class Merge {
 
     
 }
+
+
+/*
+ * COMPARISON TO BUBBLE SORT
+ * - merge sort partitions the array into halves an recursively sorts them
+ * - bubble sort compares adjacent elements and sorts them locally 
+ */
