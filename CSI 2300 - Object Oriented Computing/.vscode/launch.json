@@ -1,0 +1,100 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "MetricConvertorGUI",
+            "request": "launch",
+            "mainClass": "MetricConvertorGUI",
+            "projectName": "CSI 2300 - Object Oriented Computing_73c633cb",
+            "vmArgs": "--module-path C:\\Users\\mng48\\source\\repos\\tools\\javafx-sdk-24\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Animal",
+            "request": "launch",
+            "mainClass": "Animal",
+            "projectName": "CSI 2300 - Object Oriented Computing_73c633cb"
+        },
+        {
+            "type": "java",
+            "name": "BubbleSort",
+            "request": "launch",
+            "mainClass": "BubbleSort",
+            "projectName": "CSI 2300 - Object Oriented Computing_73c633cb"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "CSI 2300 - Object Oriented Computing_73c633cb"
+        },
+        {
+            "type": "java",
+            "name": "MetricConvertor",
+            "request": "launch",
+            "mainClass": "MetricConvertor",
+            "projectName": "CSI 2300 - Object Oriented Computing_73c633cb"
+        },
+        {
+            "type": "java",
+            "name": "Main(1)",
+            "request": "launch",
+            "mainClass": "countwords.Main",
+            "projectName": "CSI 2300 - Object Oriented Computing_73c633cb"
+        },
+        {
+            "type": "java",
+            "name": "Fibonacci",
+            "request": "launch",
+            "mainClass": "fibonacci.Fibonacci",
+            "projectName": "CSI 2300 - Object Oriented Computing_73c633cb"
+        },
+        {
+            "type": "java",
+            "name": "Merge",
+            "request": "launch",
+            "mainClass": "merge_sort.Merge",
+            "projectName": "CSI 2300 - Object Oriented Computing_73c633cb"
+        },
+        {
+            "type": "java",
+            "name": "multiplier",
+            "request": "launch",
+            "mainClass": "multiplier",
+            "projectName": "CSI 2300 - Object Oriented Computing_73c633cb"
+        },
+        {
+            "type": "java",
+            "name": "Main(2)",
+            "request": "launch",
+            "mainClass": "password_validate.Main",
+            "projectName": "CSI 2300 - Object Oriented Computing_73c633cb"
+        },
+        {
+            "type": "java",
+            "name": "reverse_string",
+            "request": "launch",
+            "mainClass": "reverse_string",
+            "projectName": "CSI 2300 - Object Oriented Computing_73c633cb"
+        },
+        {
+            "type": "java",
+            "name": "test",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "CSI 2300 - Object Oriented Computing_73c633cb"
+        }
+    ]
+}
