@@ -7,7 +7,6 @@ body {
     min-height: 100vh;
 }
 
-/* Removed complex background overlay */
 
 .resume-container {
     max-width: 950px;
@@ -18,10 +17,6 @@ body {
     padding: 50px 40px;
     position: relative;
 }
-
-/* Removed shimmer effect */
-
-/* Removed animations for simplified design */
 
 .contact-info {
     margin: 15px 0 25px 0;
@@ -351,9 +346,6 @@ ul li::before {
     }
 }
 
-/* Removed duplicate menu-icon styles */
-
-/* Dropdown Menu Enhanced Styles */
 .dropdown {
     display: none;
     list-style: none;
