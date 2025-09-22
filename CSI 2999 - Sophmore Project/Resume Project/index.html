@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max's Resume</title>
+    <link rel ="stylesheet" href="styles.css">
+    <style>
+/* Add styles for dropdown functionality */
+.dropdown {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+.main-menu li:hover .dropdown {
+    display: block;
+}
+
+.menu-icon {
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+    <main class="resume-container">
+        <header>
+            <h1>Maxim Glisky</h1>
+            <p class="subtitle">Computer Science Student | Oakland University</p>
+            <div class="contact-info">
+                <a href="https://www.linkedin.com/in/maxim-glisky/" target="_blank" rel="noopener" class="contact-link">LinkedIn</a> |
+                <span>248-792-1079</span> |
+                <a href="http://website.com" target="_blank" rel="noopener" class="contact-link">website.com</a> |
+                <a href="mailto:maximglisky@oakland.edu" class="contact-link">maximglisky@oakland.edu</a> |
+                <a href="https://github.com/mng48301/" target="_blank" rel="noopener" class="contact-link">GitHub</a>
+            </div>
+            <div class="hamburger-menu">
+                <input type="checkbox" id="menu-toggle" />
+                <label for="menu-toggle" class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div class="menu-content">
+                    <a href="index.html">Home</a>
+                    <a href="project1.html">SearchAI</a>
+                    <a href="project2.html">BluSec</a>
+                    <a href="project3.html">WIChat</a>
+                </div>
+            </div>
+        </header>
+        
+        <section class="summary" id="summary">
+            <h2>Career Summary</h2>
+            <p>Computer Science student with a 4.0 GPA, full merit scholarship, and extensive experience building software. Proven leadership in technical clubs and hackathons. Seeking to drive real-world impact through innovative software solutions.</p>
+        </section>
+        <section class="skills" id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li><strong>Languages & Tools:</strong> Python, Java, C++, JavaScript, HTML, CSS, Git, SQL, Bash</li>
+                <li><strong>Frameworks & Libraries:</strong> React, Node.js, Express, MongoDB, AWS, Full-Stack, Backend, Frontend, OOP, Cloud Computing</li>
+                <li><strong>Languages Spoken:</strong> English, Russian, Spanish (Professional proficiency or above)</li>
+            </ul>
+        </section>
+        <section class="experience" id="experience">
+            <h2>Experience</h2>
+            <div class="job">
+                <h3>Software Engineering Intern</h3>
+                <p class="company">Assistance League of Southeastern Michigan &mdash; MI, USA</p>
+                <p class="date"><strong>06/2023 - 10/2023</strong></p>
+                <ul>
+                    <li>Resolved 15+ critical website issues, tested and reviewed for missing content.</li>
+                    <li>Improved file management system using cybersecurity frameworks, increasing access efficiency by 30%.</li>
+                    <li>Developed youth-friendly UI/UX components and reduced design redundancies.</li>
+                    <li>Introduced new slideshow model to display images.</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h3>Business Analyst Intern</h3>
+                <p class="company">Woodberry Wine &mdash; MI, USA</p>
+                <p class="date"><strong>07/2022 - 08/2022</strong></p>
+                <ul>
+                    <li>Analyzed custom integrated software solutions for company data, shipment routes, and business workflows.</li>
+                    <li>Handled shipping of 200+ wine products, integrated new barcode system for efficient tracking.</li>
+                    <li>Improved inventory organization and operational efficiency by 20%.</li>
+                </ul>
+            </div>
+        </section>
+        <section class="education" id="education">
+            <h2>Education</h2>
+            <h3>Bachelor of Science, Computer Science</h3>
+            <p class="school"><strong>Oakland University</strong> <span class="date" style="margin-left: 50%">Rochester, MI, USA &mdash;&mdash;   <strong>09/2024 - 09/2028</strong></span> </p>
+            
+            <ul>
+                <li><strong>GPA: 4.0</strong></li>
+                <li>Honors College, Presidential Scholar, CSE Board Member, EIA Vice President</li>
+                <li>CyberOU, Competitive Programming Club, Chess Club, OU Water Polo, Entrepreneurs In Action, GrizzHacks</li>
+            </ul>
+        </section>
+        <section class="leadership" id="leadership">
+            <h2>Leadership</h2>
+            <ul>
+                <li><strong>Vice President</strong>: Entrepreneurs in Action (EIA) club, 85+ members. Automated social media with AI; built and deployed website using React and AWS.</li>
+                <li><strong>CSE Student Advisory Board</strong>: Led student town hall meetings, consulted with faculty and orgs for department improvements.</li>
+                <li><strong>Cybersecurity Organizer</strong>: Designed CTF questions for GrizzHacks7, attended by 300+ participants.</li>
+            </ul>
+        </section>
+        <section class="projects" id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>SearchAI:</strong> Full stack AI contextualized search engine (React, Node.js, Selenium) <span class="date">02/2025</span></li>
+                <li><strong>BluSec:</strong> Arduino Bluetooth pentesting tool (HC-06 module) <span class="date">09/2024</span></li>
+                <li><strong>WIChat:</strong> Python chat messaging app with sockets and client-server architecture <span class="date">07/2023</span></li>
+            </ul>
+        </section>
+        <section class="awards" id="awards">
+            <h2>Awards & Achievements</h2>
+            <ul>
+                <li><strong>GrizzHacks Hackathon - 1st place:</strong> Solo track winner out of 220+ students from 15+ universities. Built HiveMind, an AI collaborative environment (React, Node.js, Socket.io) <span class="date">03/2025</span></li>
+                <li><strong>National Cyber League - Top 3% of 4898 Teams:</strong> Ranked 166th nationally, excelled in software enumeration and exploitation <span class="date">10/2024</span></li>
+                <li><strong>Eagle Scout Award:</strong> Highest honor in Scouts BSA, earned by &lt;4% of scouts <span class="date">06/2024</span></li>
+                <li><strong>Platinum Presidential Scholarship Award:</strong> Merit scholarship for 4.0+ GPA and 34+ ACT <span class="date">09/2024</span></li>
+            </ul>
+        </section>
+    </main>
+    <script>
+// Add JavaScript for dropdown toggle functionality
+const menuToggle = document.getElementById('menu-toggle');
+const dropdown = document.querySelector('.dropdown');
+
+menuToggle.addEventListener('change', () => {
+    if (menuToggle.checked) {
+        dropdown.style.display = 'block';
+    } else {
+        dropdown.style.display = 'none';
+    }
+});
+</script>
+</body>
+
+</html>

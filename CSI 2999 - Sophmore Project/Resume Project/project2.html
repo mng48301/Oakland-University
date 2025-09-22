@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BluSec Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Enhanced styling for code snippet with more colors and effects */
+        pre {
+            background-color: #1e1e1e;
+            color: #dcdcdc;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: Consolas, "Courier New", monospace;
+            overflow-x: auto;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        pre::before {
+            content: 'C++';
+            position: absolute;
+            top: 8px;
+            right: 15px;
+            background: #764ba2;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        code {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* Syntax highlighting */
+        code .keyword { color: #569cd6; font-weight: bold; }
+        code .string { color: #ce9178; font-style: italic; }
+        code .comment { color: #6a9955; font-style: italic; }
+        code .function { color: #dcdcaa; font-weight: bold; }
+        code .variable { color: #9cdcfe; }
+        code .number { color: #b5cea8; }
+        code .operator { color: #d4d4d4; }
+        
+        /* Hover effect */
+        pre:hover {
+            background-color: #252526;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        /* Removed .project-detail animation for simplified design */
+        
+        .project-detail h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+        
+        .project-detail ul li {
+            padding: 8px 0;
+            list-style-type: disc; /* Change to normal bullet points */
+            border-left: none; /* Remove the left border */
+            padding-left: 20px; /* Adjust padding for alignment */
+            margin: 10px 0;
+            background: none; /* Remove background */
+            border-radius: 0; /* Remove border radius */
+            transition: none; /* Remove hover transition */
+        }
+        
+        .project-detail ul li:hover {
+            background: none; /* Remove hover background */
+            transform: none; /* Remove hover transform */
+        }
+        
+        h3 {
+            color: #764ba2;
+            font-size: 1.4rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <main class="resume-container">
+        <header>
+            <h1>Maxim Glisky</h1>
+            <div class="hamburger-menu">
+                <input type="checkbox" id="menu-toggle" />
+                <label for="menu-toggle" class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div class="menu-content">
+                    <a href="index.html">Home</a>
+                    <a href="project1.html">SearchAI</a>
+                    <a href="project2.html">BluSec</a>
+                    <a href="project3.html">WIChat</a>
+                </div>
+            </div>
+        </header>
+        <section class="project-detail" id="blusec">
+            <h2>BluSec <a href="https://github.com/mng48301/BlueSec" target="_blank" rel="noopener" style="display: block; text-align: right; font-size: 0.6em;">Github</a></h2>
+            <p><strong>Description:</strong> Arduino Bluetooth pentesting tool (HC-06 module)</p>
+            <p><strong>Date:</strong> 09/2024</p>
+            <h3>BlueSec - Bluetooth Security Assessment Tool</h3>
+            <p><strong>Description:</strong> BlueSec is an Arduino-based tool designed to assess and identify potential security vulnerabilities in nearby Bluetooth devices.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Scans for nearby Bluetooth devices.</li>
+                <li>Detects common security vulnerabilities such as known exploits, vulnerable services, default PIN codes, and outdated firmware versions.</li>
+                <li>Checks encryption modes and monitors signal strength for potential evil twin attacks.</li>
+                <li>Generates comprehensive security assessment reports.</li>
+            </ul>
+            <h3>Code Snippet: Vulnerability Detection</h3>
+            <pre>
+<code>
+<span class="keyword">#include</span> <span class="string">&lt;SoftwareSerial.h&gt;</span>
+
+SoftwareSerial BTSerial(10, 11); <span class="comment">// RX, TX pins for Bluetooth module</span>
+
+<span class="function">void</span> checkDefaultPins(<span class="keyword">const</span> <span class="keyword">char</span>* device_mac) {
+    Serial.println(<span class="string">"Testing default PINs..."</span>);
+
+    <span class="keyword">const</span> <span class="keyword">char</span>* DEFAULT_PINS[] = {<span class="string">"0000"</span>, <span class="string">"1234"</span>, <span class="string">"1111"</span>, <span class="string">"9999"</span>};
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i < 4; i++) {
+        BTSerial.print(<span class="string">"AT+PAIR="</span>);
+        BTSerial.print(device_mac);
+        BTSerial.print(<span class="string">","</span>);
+        BTSerial.println(DEFAULT_PINS[i]);
+        delay(2000);
+
+        String response = <span class="string">""</span>;
+        <span class="keyword">while</span> (BTSerial.available()) {
+            response += (<span class="keyword">char</span>)BTSerial.read();
+        }
+
+        <span class="keyword">if</span> (response.indexOf(<span class="string">"OK"</span>) != -1) {
+            Serial.print(<span class="string">"WARNING: Device accepts default PIN: "</span>);
+            Serial.println(DEFAULT_PINS[i]);
+            <span class="keyword">return</span>;
+        }
+    }
+}
+</code>
+            </pre>
+        </section>
+    </main>
+</body>
+</html>
