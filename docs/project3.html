@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIChat Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Enhanced styling for code snippet with more colors and effects */
+        pre {
+            background-color: #1e1e1e;
+            color: #dcdcdc;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: Consolas, "Courier New", monospace;
+            overflow-x: auto;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        pre::before {
+            content: 'Python';
+            position: absolute;
+            top: 8px;
+            right: 15px;
+            background: #16a085;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        code {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* Syntax highlighting */
+        code .keyword { color: #569cd6; font-weight: bold; }
+        code .string { color: #ce9178; font-style: italic; }
+        code .comment { color: #6a9955; font-style: italic; }
+        code .function { color: #dcdcaa; font-weight: bold; }
+        code .variable { color: #9cdcfe; }
+        code .number { color: #b5cea8; }
+        code .operator { color: #d4d4d4; }
+        
+        /* Hover effect */
+        pre:hover {
+            background-color: #252526;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        /* Removed .project-detail animation for simplified design */
+        
+        .project-detail h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+        
+        .project-detail ul li {
+            padding: 8px 0;
+            list-style-type: disc; /* Change to normal bullet points */
+            border-left: none; /* Remove the left border */
+            padding-left: 20px; /* Adjust padding for alignment */
+            margin: 10px 0;
+            background: none; /* Remove background */
+            border-radius: 0; /* Remove border radius */
+            transition: none; /* Remove hover transition */
+        }
+        
+        .project-detail ul li:hover {
+            background: none; /* Remove hover background */
+            transform: none; /* Remove hover transform */
+        }
+        
+        h3 {
+            color: #16a085;
+            font-size: 1.4rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <main class="resume-container">
+        <header>
+            <h1>Maxim Glisky</h1>
+            <div class="hamburger-menu">
+                <input type="checkbox" id="menu-toggle" />
+                <label for="menu-toggle" class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div class="menu-content">
+                    <a href="index.html">Home</a>
+                    <a href="project1.html">SearchAI</a>
+                    <a href="project2.html">BluSec</a>
+                    <a href="project3.html">WIChat</a>
+                </div>
+            </div>
+        </header>
+        <section class="project-detail" id="wichat">
+            <h2>WIChat <a href="https://github.com/mng48301/basic-chat-application" target="_blank" rel="noopener" style="display: block; text-align: right; font-size: 0.6em;">Github</a></h2>
+            <p><strong>Description:</strong> This is a basic client-server chat application that uses sockets to create a connection between the server and clients. It supports multiple clients within a local area network (LAN) or Wi-Fi. To use, the server-side code must be running, and the client-side code should connect using the server's IP address. Created by <strong>mng48301</strong>.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Supports multiple clients.</li>
+                <li>Real-time messaging between clients.</li>
+                <li>Dynamic client index updates.</li>
+            </ul>
+            <h3>Code Snippet: Client-Side Implementation</h3>
+            <pre>
+<code>
+<span class="keyword">import</span> socket
+<span class="keyword">import</span> tkinter <span class="keyword">as</span> tk
+<span class="keyword">import</span> threading
+
+<span class="comment"># Connect to server</span>
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_ip_address = <span class="string">"<SERVER_IP_ADDRESS>"</span>  <span class="comment"># Replace with server IP</span>
+port_address = 12345
+client_socket.connect((server_ip_address, port_address))
+
+<span class="comment"># Handle incoming messages</span>
+<span class="function">def</span> handle_messages():
+    <span class="keyword">while</span> <span class="keyword">True</span>:
+        incoming_message = client_socket.recv(2000).decode()
+        <span class="keyword">print</span>(<span class="string">"Message received:"</span>, incoming_message)
+
+threading.Thread(target=handle_messages).start()
+</code>
+            </pre>
+        </section>
+    </main>
+</body>
+</html>

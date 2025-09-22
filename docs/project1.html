@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SearchAI Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Enhanced styling for code snippet with more colors and effects */
+        pre {
+            background-color: #1e1e1e;
+            color: #dcdcdc;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: Consolas, "Courier New", monospace;
+            overflow-x: auto;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        pre::before {
+            content: 'Python';
+            position: absolute;
+            top: 8px;
+            right: 15px;
+            background: #667eea;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        code {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* Syntax highlighting */
+        code .keyword { color: #569cd6; font-weight: bold; }
+        code .string { color: #ce9178; font-style: italic; }
+        code .comment { color: #6a9955; font-style: italic; }
+        code .function { color: #dcdcaa; font-weight: bold; }
+        code .variable { color: #9cdcfe; }
+        code .number { color: #b5cea8; }
+        code .operator { color: #d4d4d4; }
+        
+        /* Hover effect */
+        pre:hover {
+            background-color: #252526;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        /* Removed .project-detail animation for simplified design */
+        
+        .project-detail h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+        
+        .project-detail ul li {
+            padding: 8px 0;
+            list-style-type: disc; /* Change to normal bullet points */
+            border-left: none; /* Remove the left border */
+            padding-left: 20px; /* Adjust padding for alignment */
+            margin: 10px 0;
+            background: none; /* Remove background */
+            border-radius: 0; /* Remove border radius */
+            transition: none; /* Remove hover transition */
+        }
+        
+        .project-detail ul li:hover {
+            background: none; /* Remove hover background */
+            transform: none; /* Remove hover transform */
+        }
+        
+        h3 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <main class="resume-container">
+        <header>
+            <h1>Maxim Glisky</h1>
+            <div class="hamburger-menu">
+                <input type="checkbox" id="menu-toggle" />
+                <label for="menu-toggle" class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div class="menu-content">
+                    <a href="index.html">Home</a>
+                    <a href="project1.html">SearchAI</a>
+                    <a href="project2.html">BluSec</a>
+                    <a href="project3.html">WIChat</a>
+                </div>
+            </div>
+        </header>
+        <section class="project-detail" id="searchai">
+            <h2>SearchAI - AI Search Engine <a href="https://github.com/mng48301/SearchAI" target="_blank" rel="noopener" style="display: block; text-align: right; font-size: 0.6em;">Github</a></h2>
+            <p><strong>Description:</strong> An AI Search Engine that provides intelligent search functionality with real-time processing and result management.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Real-time search processing with progress tracking.</li>
+                <li>Asynchronous search operations.</li>
+                <li>Source content detail viewing.</li>
+                <li>Search result management (including deletion).</li>
+                <li>Interactive user interface.</li>
+            </ul>
+            <h3>Code Snippet: Web Scraping Functionality</h3>
+            <pre>
+<code>
+<span class="keyword">import</span> requests
+<span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup
+<span class="keyword">import</span> logging
+
+<span class="function">def</span> scrape_website(url: <span class="keyword">str</span>) -> <span class="keyword">str</span>:
+    <span class="comment">"""Scrapes content from a website using requests instead of Selenium"""</span>
+    <span class="keyword">try</span>:
+        headers = {
+            <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'</span>,
+            <span class="string">'Accept'</span>: <span class="string">'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'</span>,
+        }
+        response = requests.get(url, headers=headers, timeout=15)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, <span class="string">'html.parser'</span>)
+        <span class="keyword">return</span> soup.get_text()
+    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:
+        logging.error(f<span class="string">"Error scraping {url}: {str(e)}"</span>)
+        <span class="keyword">return</span> <span class="string">""</span>
+</code>
+            </pre>
+        </section>
+    </main>
+</body>
+</html>
